@@ -1,0 +1,232 @@
+<xml xmlns="https://bipes.net.br">
+  <workspace>
+    <field name="DEVICE">RPI_Pico</field>
+    <field name="TIMESTAMP">1665501806869</field>
+    <freeboard><![CDATA[{"version":1,"allow_edit":true,"plugins":[],"panes":[],"datasources":[],"columns":3}]]></freeboard>
+    <databoard><![CDATA[{"currentWorkspace":"kvfgejtdtlhg0wfqod9","workspace:kvfgejtdtlhg0wfqod9":[]}]]></databoard> 
+  </workspace>
+  <variables>
+    <variable id="F8MT8*^r-1F(SNn}3NfW">ramp_delay</variable>
+    <variable id="2wsqLe+v(T3I[S[e+i:3">i</variable>
+  </variables>
+  <block type="neopixel_init" id="Rz%@k+]AM%Ydk%ut%50~" x="-1312" y="-613">
+    <value name="pin">
+      <shadow type="pinout" id="=]H,gBA8S]G_HD|~!AXb">
+        <field name="DEVICE">RPI_Pico_W</field>
+        <field name="PIN">0</field>
+      </shadow>
+    </value>
+    <value name="number">
+      <shadow type="math_number" id="R+{H4}U2tFS@g,oF[%$B">
+        <field name="NUM">8</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="variables_set" id="}^Gf5#MO/}pTe#se)dc(">
+        <field name="VAR" id="F8MT8*^r-1F(SNn}3NfW">ramp_delay</field>
+        <value name="VALUE">
+          <block type="math_number" id="KFis:k9!^wJI*/z,-jhS">
+            <field name="NUM">0.01</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_whileUntil" id="]5hd@qAT8/Z6L[yOA7T~">
+            <field name="MODE">WHILE</field>
+            <value name="BOOL">
+              <block type="logic_boolean" id="337*S|k-A(mTcW?{]m_K">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="controls_for" id="[V8AtHIxA#io{U)9a,uo">
+                <field name="VAR" id="2wsqLe+v(T3I[S[e+i:3">i</field>
+                <value name="FROM">
+                  <shadow type="math_number" id="B7MZz`9G:d-PjF/^i!dy">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number" id="H97%?0(Ki(`Yh.Vi}u29">
+                    <field name="NUM">255</field>
+                  </shadow>
+                </value>
+                <value name="BY">
+                  <shadow type="math_number" id="mTp6|2Gpz5MFgq^?[CUg">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="neopixel_control" id="o|.X7Jv2yql*0U6@NlB1">
+                    <value name="address">
+                      <shadow type="math_number" id="WrQm)RP3tO.mjP[/A$Dh">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="color">
+                      <shadow type="neopixel_color_colors" id="14e4HT7jBq..wH104#C)">
+                        <field name="color">#ff0000</field>
+                      </shadow>
+                      <block type="neopixel_color_numbers" id="=^U^xuc!W=f|xMJ.tXj@">
+                        <value name="red">
+                          <shadow type="math_number" id="e9PY5nhT?IB*}~A0yp61">
+                            <field name="NUM">50</field>
+                          </shadow>
+                          <block type="variables_get" id="2PnhrD(U7_wLx2)Gz)X[">
+                            <field name="VAR" id="2wsqLe+v(T3I[S[e+i:3">i</field>
+                          </block>
+                        </value>
+                        <value name="green">
+                          <shadow type="math_number" id="Z2Z%$Wu*.a_/$RjZMR]u">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="blue">
+                          <shadow type="math_number" id="99RY-QZHS,;sza(7@zn{">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="neopixel_write" id="J`JfK!k:$$E3n^=J@KZx">
+                        <next>
+                          <block type="delay" id="#MYh*$DKl#RNLP|(xP[X">
+                            <field name="SCALE">sleep</field>
+                            <value name="TIME">
+                              <shadow type="math_number" id="%mZXP/?a/b1[]VxR=,!S">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="`zO![9u4j3a(^.CPb}hr">
+                                <field name="VAR" id="F8MT8*^r-1F(SNn}3NfW">ramp_delay</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_for" id="z.K*45Vrs8pa~?$81#iw">
+                    <field name="VAR" id="2wsqLe+v(T3I[S[e+i:3">i</field>
+                    <value name="FROM">
+                      <shadow type="math_number" id=",I8KgYFJnPTs1.c3ErX,">
+                        <field name="NUM">255</field>
+                      </shadow>
+                    </value>
+                    <value name="TO">
+                      <shadow type="math_number" id="%oBCb(dFK*S:CWQh![(I">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="BY">
+                      <shadow type="math_number" id="MUxifrW}})zkWOLpO4f^">
+                        <field name="NUM">-10</field>
+                      </shadow>
+                    </value>
+                    <statement name="DO">
+                      <block type="neopixel_control" id="d.390~Xpi-8_{V9^aLlm">
+                        <value name="address">
+                          <shadow type="math_number" id="s5Q64sqjL4!vDuH,R!pW">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="color">
+                          <shadow type="neopixel_color_colors">
+                            <field name="color">#ff0000</field>
+                          </shadow>
+                          <block type="neopixel_color_numbers" id="hzQLp*v:3d;Ichfn,T~@">
+                            <value name="red">
+                              <shadow type="math_number">
+                                <field name="NUM">50</field>
+                              </shadow>
+                              <block type="variables_get" id="i`JW,T::XMu!+8RC+(Nn">
+                                <field name="VAR" id="2wsqLe+v(T3I[S[e+i:3">i</field>
+                              </block>
+                            </value>
+                            <value name="green">
+                              <shadow type="math_number" id="h-Bp-F8{MWT(5$3=MW{1">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="blue">
+                              <shadow type="math_number" id="mrr_jT#VysFJl`!$LJH9">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="neopixel_write" id="|aKft@*dS/;Hr_G]x;cJ">
+                            <next>
+                              <block type="delay" id="5c]z06J.VgQgH6|_1v*L">
+                                <field name="SCALE">sleep</field>
+                                <value name="TIME">
+                                  <shadow type="math_number">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="zyu^l5One$HQjEETzj#$">
+                                    <field name="VAR" id="F8MT8*^r-1F(SNn}3NfW">ramp_delay</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="neopixel_control" id="x*CdBGrKQalJ%xNJ?/~=">
+                        <value name="address">
+                          <shadow type="math_number" id="9#_W|Nz8p-1R%JiH)-5h">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="color">
+                          <shadow type="neopixel_color_colors" id="=%kZj91YouOZgewzb^yF">
+                            <field name="color">#000000</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="neopixel_write" id="O2t7-w`^V13FWN++)mFP">
+                            <next>
+                              <block type="delay" id="@|S;f3S+,X#;S6JisR@,">
+                                <field name="SCALE">sleep</field>
+                                <value name="TIME">
+                                  <shadow type="math_number" id="7JiSZv`rQEW]eH|]Gi@Y">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="project_metadata" id="dx}otaxV@0OAUg!}/wHY" x="-1612" y="-463">
+    <value name="project_author">
+      <shadow type="text" id="c5%xc[JP61AnI4}h{}HJ">
+        <field name="TEXT">Jet</field>
+      </shadow>
+    </value>
+    <value name="project_iot_id">
+      <shadow type="math_number" id="j(Wld0E}O|C/`ZsLK6nb">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="project_description">
+      <shadow type="text" id="mm$!*[9Uc$DI{wWp}+Gm">
+        <field name="TEXT">Heart Beat</field>
+      </shadow>
+    </value>
+  </block>
+</xml>
