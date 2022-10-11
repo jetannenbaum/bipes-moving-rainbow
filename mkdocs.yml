@@ -1,0 +1,44 @@
+site_name: 'Moving Rainbow'
+nav:
+  - CoderDojo Mentor Resources: https://coderdojotc.github.io/CoderDojoTC/
+  - Moving Rainbow Home: index.md
+  - Lessons:
+    - List of Lessons: lessons/index.md
+    - Blink: lessons/01-blink.md
+    - Fade In and Out: lessons/02-fade-in-and-out.md
+    - Heartbeat: lessons/03-heartbeat.md
+    - Red, Green and Blue: lessons/04-red-green-blue.md
+    - Color Wheel: lessons/05-color-wheel.md
+    - A Better Dimmer: lessons/06-linear-dimmer.md
+    - Basic Motion: lessons/07-motion.md
+    - Commit Tail: lessons/09-comet-tail.md
+    - Moving Rainbow: lessons/10-moving-rainbow.md
+    - Rainbow Cycle: lessons/11-rainbow-cycle.md 
+    - Color Wipe: lessons/08-color-wipe.md
+    - Random: lessons/15-random.md
+    - Candle Flicker: lessons/16-candle.md
+    - Theater Chase: lessons/17-theater-chase.md
+
+site_description: 'Resources for teaching computational thinking to CoderDojo Twin Cities students using LED strips.  All content licensed Creative Commons ShareAlike Attribution Noncommercial'
+site_author: 'J. E. Tannenbaum'
+repo_name: 'GitHub Repo'
+repo_url: 'https://github.com/jetannenbaum/bipes-moving-rainbow'
+
+theme:
+  name: material
+  palette:
+    primary: '#642580'
+    accent: '#41BAC1'
+  include_sidebar: true
+  features:
+    - navigation.instant
+    - navigation.tracking
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.details
+  - pymdownx.superfences
