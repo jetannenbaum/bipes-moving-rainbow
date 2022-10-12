@@ -11,3 +11,7 @@
 9. Comet - make a block of color move with a dimming tail
 10. Moving Rainbow - move a block of colors 
 11. Rainbow Cycle - cycle every pixel through all the colors of the rainbow
+12. Color Wipe
+13. Random
+14. Candle Flicker
+15. Theater Chase
