@@ -11,8 +11,10 @@ To write this program, we will create a simple Python function that will cycle t
 
 ![Color List](../img/colorList.jpg)
 
-Now with this list
+Our Color Wipe set of blocks will take the list of colors and set each LED to one color at a time, delaying delay seconds between setting each LED and colorDelay seconds before transitioning to the next color in our list.
 
 ![Color Wipe Function](../img/colorWipeBlocks.jpg)
+
+Finally, the main set of blocks calls the colorWipe set of blocks in an endless loop.
 
 ![Color Wipe Main Blocks](../img/colorWIpeMain.jpg)
