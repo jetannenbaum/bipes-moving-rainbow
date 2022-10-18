@@ -1,0 +1,439 @@
+<xml xmlns="https://bipes.net.br">
+  <workspace>
+    <field name="DEVICE">RPI_Pico</field>
+    <field name="TIMESTAMP">1666051493102</field>
+    <freeboard><![CDATA[{"version":1,"allow_edit":true,"plugins":[],"panes":[],"datasources":[],"columns":3}]]></freeboard>
+    <databoard><![CDATA[{"currentWorkspace":"kvfgejtdtlhg0wfqod9","workspace:kvfgejtdtlhg0wfqod9":[]}]]></databoard> 
+  </workspace>
+  <variables>
+    <variable id="}}UN@guU[)Chh-eFjiH$">start</variable>
+    <variable id="C89`.:z@}ZXzKvFOJ;vu">end</variable>
+    <variable id="d3Yo8oxMSQ9//X:fBkg}">color</variable>
+    <variable id="=UTekommBDJlh=6~/LVg">numberOfPixels</variable>
+    <variable id="Eq#WM7x1!n@(eVSg;fN*">i</variable>
+    <variable id="C(4:XdWU{2)fWb2DljL{">j</variable>
+  </variables>
+  <block type="project_metadata" id="dx}otaxV@0OAUg!}/wHY" x="-2937" y="-862">
+    <value name="project_author">
+      <shadow type="text" id="c5%xc[JP61AnI4}h{}HJ">
+        <field name="TEXT">Jet</field>
+      </shadow>
+    </value>
+    <value name="project_iot_id">
+      <shadow type="math_number" id="j(Wld0E}O|C/`ZsLK6nb">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="project_description">
+      <shadow type="text" id="mm$!*[9Uc$DI{wWp}+Gm">
+        <field name="TEXT">Moving Bands</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_set" id=":1j?)36MAK@a.k{m8n1(" x="-2212" y="-863">
+    <field name="VAR" id="=UTekommBDJlh=6~/LVg">numberOfPixels</field>
+    <value name="VALUE">
+      <block type="math_number" id="UU~K+14YG(/7F/Lzbm)M">
+        <field name="NUM">24</field>
+      </block>
+    </value>
+    <next>
+      <block type="neopixel_init" id="d:,ayVM[lKBUAuy?8BC]">
+        <value name="pin">
+          <shadow type="pinout" id="~od)S8hV_uO,5{K]xo7.">
+            <field name="DEVICE">RPI_Pico</field>
+            <field name="PIN">0</field>
+          </shadow>
+        </value>
+        <value name="number">
+          <shadow type="math_number" id="{TLNLc)5C(_8qJd#mqo,">
+            <field name="NUM">8</field>
+          </shadow>
+          <block type="variables_get" id="!Lx`ITL`Gd*VM|RB54{;">
+            <field name="VAR" id="=UTekommBDJlh=6~/LVg">numberOfPixels</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_for" id="k/vn+H)b*H3ci=gi^6F#">
+            <field name="VAR" id="C(4:XdWU{2)fWb2DljL{">j</field>
+            <value name="FROM">
+              <shadow type="math_number" id="6E3U%eTC=U$n.YFtDYKU">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="j7]k3;*aum.fd,8GhE9*">
+                <field name="NUM">10</field>
+              </shadow>
+              <block type="variables_get" id="(ap;S-yurcayeYTYS:?{">
+                <field name="VAR" id="=UTekommBDJlh=6~/LVg">numberOfPixels</field>
+              </block>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="YQJ?T^TQu%bP1L.`l%BB">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="procedures_callnoreturn" id="pI1o|RPcV.mEj*XsP|0:">
+                <mutation name="drawBand">
+                  <arg name="start"></arg>
+                  <arg name="end"></arg>
+                  <arg name="color"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="variables_get" id="FE%+F9hBmHaJ3_(:SD4=">
+                    <field name="VAR" id="C(4:XdWU{2)fWb2DljL{">j</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_arithmetic" id="l`N}9Zw=h.?kJ#q$_-2u">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <shadow type="math_number" id="`!rC|*,/Vv$R)1d@Mbu#">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="5K;CKS%2B~0QkF8dt+v4">
+                        <field name="VAR" id="C(4:XdWU{2)fWb2DljL{">j</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="n-Hu(Pnjgwsv*H*$eFR^">
+                        <field name="NUM">8</field>
+                      </shadow>
+                      <block type="math_arithmetic" id="lhL8/9gEvfUpal|=WUX~">
+                        <field name="OP">DIVIDE</field>
+                        <value name="A">
+                          <shadow type="math_number" id="y#9S|?1899^4f2CuRzF6">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="Oq(i7Z,/Kf]XMsL?!_7s">
+                            <field name="VAR" id="=UTekommBDJlh=6~/LVg">numberOfPixels</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="n5GlT,|gimP)#w![oJ9t">
+                            <field name="NUM">3</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="ARG2">
+                  <block type="neopixel_color_colors" id="8Wld)[ORsvg}b_l`jC|s">
+                    <field name="color">#ff0000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="procedures_callnoreturn" id="wejDlA.zuIRxbR-d`,,%">
+                    <mutation name="drawBand">
+                      <arg name="start"></arg>
+                      <arg name="end"></arg>
+                      <arg name="color"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_arithmetic" id="*tjA[x_g7T{iwtd@RfPG">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id=";oq|iy)x$I!n07G{lMr$">
+                            <field name="VAR" id="C(4:XdWU{2)fWb2DljL{">j</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="D?!2-d=yi32_m=9#.kKI">
+                            <field name="NUM">9</field>
+                          </shadow>
+                          <block type="math_arithmetic" id="HZ]x5$NbWYf}OSo#wZ$F">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <shadow type="math_number" id="[B=/Xf~g/ioc6k*j##!j">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="G{BgUM)8Ig%gTuKfl(r0">
+                                <field name="OP">DIVIDE</field>
+                                <value name="A">
+                                  <shadow type="math_number">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="-+i~%Z_!cjk_(CV2Eb:e">
+                                    <field name="VAR" id="=UTekommBDJlh=6~/LVg">numberOfPixels</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="_J$VPv?4S,lI6{coDDd?">
+                                    <field name="NUM">3</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="Ve)#m-`^]_RQ%7wi0.}D">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="math_arithmetic" id="s[98@NpcRA@?[P84r=m/">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="^G]jT~:+ka;!XKT+H6,s">
+                            <field name="VAR" id="C(4:XdWU{2)fWb2DljL{">j</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="@@z7s1cH|ND-HXF7D}%F">
+                            <field name="NUM">16</field>
+                          </shadow>
+                          <block type="math_arithmetic" id=")(`_#,ACyxDvdCY^X`).">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <shadow type="math_number">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="5S?|8^~)tHo^~0V*~L^]">
+                                <field name="OP">DIVIDE</field>
+                                <value name="A">
+                                  <shadow type="math_number">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="hJ6T$/c{_*MKD$m@ABD9">
+                                    <field name="VAR" id="=UTekommBDJlh=6~/LVg">numberOfPixels</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="f-P^nb@?%jxB}I5ch(/2">
+                                    <field name="NUM">3</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="*MaCp34Z_b0H!d=s-@l%">
+                                <field name="NUM">2</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ARG2">
+                      <block type="neopixel_color_colors" id="vl;JPzUHhNoL$m+VCpw0">
+                        <field name="color">#33cc00</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="Ta?OuS}+6b*?--6a1ap!">
+                        <mutation name="drawBand">
+                          <arg name="start"></arg>
+                          <arg name="end"></arg>
+                          <arg name="color"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_arithmetic" id="MR(90!G3hy@BU3mOUKyq">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <shadow type="math_number">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id=".9n;AOXL=%M!NLrIua=A">
+                                <field name="VAR" id="C(4:XdWU{2)fWb2DljL{">j</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="|b01:/b^x}2j7B10UQbC">
+                                <field name="NUM">17</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="pcN6Q-HA]aJo^jT+QC:6">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <shadow type="math_number" id="!l17@F29G1~6#WJp9SH]">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="math_arithmetic" id="2)@3FnMjTVD32#QUg=*#">
+                                    <field name="OP">MULTIPLY</field>
+                                    <value name="A">
+                                      <shadow type="math_number">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                      <block type="math_arithmetic" id="v_-DZXU$h|#+SF`HWoX0">
+                                        <field name="OP">DIVIDE</field>
+                                        <value name="A">
+                                          <shadow type="math_number">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="variables_get" id="2`n0AC84=uW;94D]HO+G">
+                                            <field name="VAR" id="=UTekommBDJlh=6~/LVg">numberOfPixels</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <shadow type="math_number" id="zL~L5hsx;*fNQsr~H19D">
+                                            <field name="NUM">3</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <shadow type="math_number" id="|qg-#5bf![nvF9*S4li*">
+                                        <field name="NUM">2</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="7[ARDSm|L94~yHNe3:U0">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="math_arithmetic" id="XTC4njcr(c/$DYM!9EiW">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <shadow type="math_number">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="C5DleN_V.R{lm94en-cM">
+                                <field name="VAR" id="C(4:XdWU{2)fWb2DljL{">j</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="gtH?-$JxVB`s^PfSyuQR">
+                                <field name="NUM">24</field>
+                              </shadow>
+                              <block type="variables_get" id="Jk2IDKLPx.--+H+oA?`v">
+                                <field name="VAR" id="=UTekommBDJlh=6~/LVg">numberOfPixels</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ARG2">
+                          <block type="neopixel_color_colors" id="ZK|!|L%(-.y!4mS`2A#h">
+                            <field name="color">#3333ff</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay" id="@T+|Qk3LckU~G`TNvr8+">
+                            <field name="SCALE">sleep</field>
+                            <value name="TIME">
+                              <shadow type="math_number" id="LMTKrxRC(xYMWJ77f#(X">
+                                <field name="NUM">0.25</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" id="QLoMOYNiJ#LfBL~d8N14" x="-2988" y="-713">
+    <mutation>
+      <arg name="start" varid="}}UN@guU[)Chh-eFjiH$"></arg>
+      <arg name="end" varid="C89`.:z@}ZXzKvFOJ;vu"></arg>
+      <arg name="color" varid="d3Yo8oxMSQ9//X:fBkg}"></arg>
+    </mutation>
+    <field name="NAME">drawBand</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="controls_for" id="lqn*7srT7-L$ZBgg^cFZ">
+        <field name="VAR" id="Eq#WM7x1!n@(eVSg;fN*">i</field>
+        <value name="FROM">
+          <shadow type="math_number" id="}HAb:2k)Sk[$IM[~M~QM">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="variables_get" id="L%jQqVj=BM^iB2a);b!j">
+            <field name="VAR" id="}}UN@guU[)Chh-eFjiH$">start</field>
+          </block>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id="@NP;doE!P]pz[A9GhA%o">
+            <field name="NUM">10</field>
+          </shadow>
+          <block type="variables_get" id="z^cP{,736}71zmNy-h%j">
+            <field name="VAR" id="C89`.:z@}ZXzKvFOJ;vu">end</field>
+          </block>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="VeI.ux|8=_XUcmi(3H[8">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="neopixel_control" id="S)hQ=,dp/@]J.B?0nVE[">
+            <value name="address">
+              <shadow type="math_number" id="m!8dn?r%=P7s2/P:4JPk">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="var_to_int" id="{EG$J{XFh,NIu:4VR8*p">
+                <field name="VAR">to int</field>
+                <value name="var">
+                  <block type="math_modulo" id="$9h81o]AoyEgNhu0yWPc">
+                    <value name="DIVIDEND">
+                      <shadow type="math_number" id="c0baGX60_`hN4m/#Mg3s">
+                        <field name="NUM">64</field>
+                      </shadow>
+                      <block type="math_arithmetic" id="a~z%9)5y;~xKa3o`/5G5">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="yxR^HM^w5~x9!EHNvgp`">
+                            <field name="VAR" id="Eq#WM7x1!n@(eVSg;fN*">i</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="d=L_DZJVD)8zQ1lm)Rw=">
+                            <field name="NUM">2</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="DIVISOR">
+                      <shadow type="math_number" id="3Oh:X74R[hml$/?_t?y:">
+                        <field name="NUM">10</field>
+                      </shadow>
+                      <block type="variables_get" id="qz_Lh}@qVa9i8:oLC~h^">
+                        <field name="VAR" id="=UTekommBDJlh=6~/LVg">numberOfPixels</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="color">
+              <shadow type="neopixel_color_colors" id="8Av3|2eN23k8w0xny#@:">
+                <field name="color">#000000</field>
+              </shadow>
+              <block type="variables_get" id="D$|`eM}T36sbJc~B*aSi">
+                <field name="VAR" id="d3Yo8oxMSQ9//X:fBkg}">color</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="neopixel_write" id="RX-KZv]^ErX7FpmFCo}H"></block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

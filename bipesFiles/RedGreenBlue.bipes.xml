@@ -1,0 +1,83 @@
+<xml xmlns="https://bipes.net.br">
+  <workspace>
+    <field name="DEVICE">RPI_Pico</field>
+    <field name="TIMESTAMP">1666047154964</field>
+    <freeboard><![CDATA[{"version":1,"allow_edit":true,"plugins":[],"panes":[],"datasources":[],"columns":3}]]></freeboard>
+    <databoard><![CDATA[{"currentWorkspace":"kvfgejtdtlhg0wfqod9","workspace:kvfgejtdtlhg0wfqod9":[]}]]></databoard> 
+  </workspace>
+  <block type="neopixel_init" id="d:,ayVM[lKBUAuy?8BC]" x="-2588" y="-912">
+    <value name="pin">
+      <shadow type="pinout" id="~od)S8hV_uO,5{K]xo7.">
+        <field name="DEVICE">RPI_Pico</field>
+        <field name="PIN">0</field>
+      </shadow>
+    </value>
+    <value name="number">
+      <shadow type="math_number" id="{TLNLc)5C(_8qJd#mqo,">
+        <field name="NUM">8</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="neopixel_control" id="N3)gNjF4XQw[^!Jxcq3$">
+        <value name="address">
+          <shadow type="math_number" id="^Q[|yHbYar:KlPA:@w)I">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="color">
+          <shadow type="neopixel_color_colors" id="znN}Oym=@=x1_pd*8yDV">
+            <field name="color">#ff0000</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="neopixel_control" id="~faOgS~rG:LO,g$aS^-N">
+            <value name="address">
+              <shadow type="math_number" id="EenvKDFjfdPK{Hmv.E@-">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="color">
+              <shadow type="neopixel_color_colors" id="_;[Bh*qF5VK?mCiZ!tN^">
+                <field name="color">#009900</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="neopixel_control" id="YqqIg7A/mdQ;4R`Uzb,;">
+                <value name="address">
+                  <shadow type="math_number" id="omFj(U4?]o8`RwHZ0AP0">
+                    <field name="NUM">2</field>
+                  </shadow>
+                </value>
+                <value name="color">
+                  <shadow type="neopixel_color_colors" id="=M/?_Ec~st//ysV$dXcW">
+                    <field name="color">#3333ff</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="neopixel_write" id="t_$%vUF`t+;[26{/7$!f"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="project_metadata" id="dx}otaxV@0OAUg!}/wHY" x="-2937" y="-862">
+    <value name="project_author">
+      <shadow type="text" id="c5%xc[JP61AnI4}h{}HJ">
+        <field name="TEXT">Jet</field>
+      </shadow>
+    </value>
+    <value name="project_iot_id">
+      <shadow type="math_number" id="j(Wld0E}O|C/`ZsLK6nb">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="project_description">
+      <shadow type="text" id="mm$!*[9Uc$DI{wWp}+Gm">
+        <field name="TEXT">Red Green Blue</field>
+      </shadow>
+    </value>
+  </block>
+</xml>
